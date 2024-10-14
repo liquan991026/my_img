@@ -1,0 +1,12 @@
+name: test
+on:
+  push:
+    branches: [ main ]
+jobs:
+  pull-docker-image:
+    runs-on: thinkphp:5.0.20
+    steps:
+    - name: pull thinkphp
+      run: |
+        docker login -u niuma1 -p mxy@10086
+        docker pull vulhub/thinkphp:5.0.20
